@@ -103,6 +103,78 @@ Config.trashcans ={
         },
         allowWeapons = true,        --allow store weapons
         limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_1= {
+        coords = vector3(2637.33251953125, -1304.285400390625, 50.47573089599609),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_2= {
+        coords = vector3(2598.830810546875, -1272.561279296875, 51.41924667358398),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_3= {
+        coords = vector3(2646.98291015625, -1279.8414306640625, 51.25605010986328),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_4= {
+        coords = vector3(2702.67138671875, -1253.5699462890625, 48.84153747558594),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_5= {
+        coords = vector3(2715.2744140625, -1238.271240234375, 49.02165222167969),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
+    },  
+    sd_6= {
+        coords = vector3(2729.89404296875, -1295.9722900390625, 47.56536102294922),
+        heading = 0.0,
+        radius= 1.5,
+        model = nil,
+        itemLimit = 100,          --item limit for all items
+        limitedItems = {            --limit specific items
+
+        },
+        allowWeapons = true,        --allow store weapons
+        limitedWeapons = {},        --limit specific weapons
     }
 }
 
