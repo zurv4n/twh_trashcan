@@ -1,17 +1,4 @@
 ------------------------
--- Client wide variables
-------------------------
-local seatedChairs = {}
-
-
-
-
-
-
-
-
-
-------------------------
 -- Threads and Functions
 ------------------------
 
@@ -59,30 +46,29 @@ Citizen.CreateThread(function() -- Spawnmanager for trashcans
     while true do
         for _, trashcanData in pairs(Config.trashcans) do
             if trashcanData.model then
-                
-            end
-            local playerCoords = GetEntityCoords(PlayerPedId())
-            local distance = #(playerCoords - trashcanData.coords)
-            if distance < Config.spawnDistance then
-                if not trashcanData.spawned then
-                    DebugPrint("Spawning trashcan for coords: " .. trashcanData.coords)
-                    SpawnObject(trashcanData.model, trashcanData.coords, function(obj)
-                        trashcanData.obj = obj
-                        trashcanData.spawned = true
-                        if trashcanData.heading then
-                            SetEntityHeading(obj, trashcanData.heading)
-                        end
-                        FreezeEntityPosition(obj, true)
-                        SetEntityCollision(obj, true, true)
-                    end)
+                local playerCoords = GetEntityCoords(PlayerPedId())
+                local distance = #(playerCoords - trashcanData.coords)
+                if distance < Config.spawnDistance then
+                    if not trashcanData.spawned then
+                        DebugPrint("Spawning trashcan for coords: " .. trashcanData.coords)
+                        SpawnObject(trashcanData.model, trashcanData.coords, function(obj)
+                            trashcanData.obj = obj
+                            trashcanData.spawned = true
+                            if trashcanData.heading then
+                                SetEntityHeading(obj, trashcanData.heading)
+                            end
+                            FreezeEntityPosition(obj, true)
+                            SetEntityCollision(obj, true, true)
+                        end)
+                    end
+                else
+                    if trashcanData.spawned then
+                        DebugPrint("Despawning trashcan")
+                        DeleteObject(trashcanData.obj)
+                        trashcanData.spawned = false
+                    end
                 end
-            else
-                if trashcanData.spawned then
-                    DebugPrint("Despawning trashcan")
-                    DeleteObject(trashcanData.obj)
-                    trashcanData.spawned = false
-                end
-            end
+            end     
         end
         Citizen.Wait(2000)
     end
