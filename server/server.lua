@@ -32,8 +32,8 @@ Citizen.CreateThread(function()
     end
     -- clear items out of trashcan when its a specific day of the week
     if Config.clearTrashcanDay then
-        local day = os.date("%w")
-        DebugPrint("Current day: " .. day)
+        local day = os.date("%H")
+        DebugPrint("Current Hour: " .. day)
         if tonumber(day) == tonumber(Config.clearTrashcanDay) then
             DebugPrint('clearing trashcans')
             for _, trashcan in pairs(Config.trashcans) do
